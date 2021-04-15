@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="icon" href="images/Logo 80 x 80.jpg">
+  <title>Qualified Small Business Stock Exclusion</title>
+</head>
+<body>
+
+<!-- 1202 GAIN SECTION -->
+<div class="container">
+  <h1>Qualified Small Business Stock Gain Exclusion</h1>
+  <h2>Please answer the following:</h2> <br>
+
+ <label class="container">
+  <input id="ccorp" type="checkbox" required value="true" checked>  You are NOT a C corporation
+  <span class="checkmark"></span><br>
+ </label>
+ 
+ <label class="container">
+  <input id="smallbus" type="checkbox" required value="true" checked> You own stock in a Qualified Small Business
+  <span class="checkmark"></span>
+ </label>
+ 
+ <label class="container">
+  <input id="originalissue" type="checkbox" required value="true"checked >  Original Issue Requirement is satisfied
+  <span class="checkmark"></span>
+ </label>
+ 
+ <label class="container">
+  <input id="qsbreq" type="checkbox"required value="true"checked>  Qualified Small Business Requirement is satisfied
+  <span class="checkmark"></span>
+ </label>
+ 
+ <label class="container">
+  <input id="activebus" type="checkbox" required value = "true" checked>  Active Business Requirement is satisfied
+  <span class="checkmark"></span>
+ </label>
+ 
+ <br>
+ 
+ <label class="container">Purchase Date    
+  <input id="buydate" type="date" required>
+  <span class="date" id="buymessage"></span>
+ </label>
+ 
+ <label class="container">Sale Date
+  <input id="saledate"  type="date" required>
+  <span class="date" id="salemessage"></span>
+ </label><br>
+ 
+<p>
+<button type="submit" onclick="myGains()">Results</button>
+</p>
+
+</div>
+
+<section class="section results">
+  <p class="message1202"></p>
+  <p id="disclaimer1202"></p>
+  <p id = "marcus">Powered by:
+    <a href="https://monumentcpa.com">Monument Accounting LLC</a>
+  </p>
+</section>
+
+
+
+
+<script src="app.js"></script>
+</body>
+</html>
