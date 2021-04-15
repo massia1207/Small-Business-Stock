@@ -23,6 +23,8 @@ function myGains(){
   if(buyInput == null || buyInput == "") {
     document.getElementById("buymessage").innerHTML = "Please choose a date";
     return false;
+  }else if (saleDate.getTime() < buyDate.getTime()){
+    setMessage1202("The purchase date must occur before the sale date","red",'');
   }else if(saleInput == null || saleInput == ""){
     document.getElementById("salemessage").innerHTML = "Please enter a date";
     return false;
