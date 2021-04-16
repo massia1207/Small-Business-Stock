@@ -37,9 +37,8 @@ input:valid+span::after {
 
 label{
   font-size: 1.65rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 200;
-  /* color: blueviolet; */
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
 }
 
 input{
