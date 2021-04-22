@@ -29,7 +29,7 @@ function myGains(){
     document.getElementById("salemessage").innerHTML = "Please enter a date";
     return false;
   }else if(chkCcorp.checked == false || chkSmallBus.checked == false || chkOrigIssue.checked == false || chkQualSmallBus.checked == false || chkActiveBus.checked == false){
-  setMessage1202(error1202msg,'red','');
+  setMessage1202(error1202msg,'red','none');
   disclaimer1202.textContent = '';  
   }else{
   //do the thing
@@ -38,7 +38,7 @@ function myGains(){
   var year = age_dt.getUTCFullYear();
   var holdingTime = Math.abs(year - 1970);
   if (holdingTime < 5){
-    setMessage1202("You must hold the investment for a minimum of 5 years to qualify for IRS Code Section 1202 excluded gains", 'red', '');
+    setMessage1202("You must hold the investment for a minimum of 5 years to qualify for IRS Code Section 1202 excluded gains", 'red', 'none');
   }else{
     console.log("determining gains");
     var p_time = buyDate.getTime();
