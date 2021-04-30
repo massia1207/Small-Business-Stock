@@ -10,6 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
   <title>Qualified Small Business Stock Exclusion</title>
+  <!-- <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js">
+	</script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js">
+	</script> -->
 </head>
 <body>
 
@@ -19,7 +23,7 @@
   <h2>Please answer the following:</h2> <br>
 
  <label class="container">
-  <input id="ccorp" type="checkbox" required value="true">  You are NOT a C corporation
+  <input id="ccorp" type="checkbox" required value = "true">  You are NOT a C corporation
   <span class="checkmark"></span><br>
  </label>
  
@@ -44,22 +48,22 @@
  </label>
  
  <br>
- 
- <label class="container">Purchase Date    
-  <input id="buydate" type="date" required>
-  <span class="date" id="buymessage"></span>
- </label>
- 
- <label class="container">Sale Date
-  <input id="saledate"  type="date" required>
-  <span class="date" id="salemessage"></span>
- </label><br>
- 
-<p>
-<button type="submit" class="button-primary" onclick="myGains()">Results</button>
-</p>
 
+  <label class="container">Purchase Date    
+    <input id="buydate" type="date" required v-model = "bdate">
+    <span class="date" id="buymessage"></span>
+  </label>
+  
+  <label class="container">Sale Date
+    <input id="saledate"  type="date" required v-model="sdate">
+    <span class="date" id="salemessage"></span>
+  </label><br>
+  
+  <p>
+  <button class="button-primary" onclick="myGains()">Results</button>
+  </p>
 </div>
+
 <div class="container">
 <section class="section results">
   <h1 class="message1202"></h1>
@@ -72,7 +76,10 @@
 
 
 
-
+<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js">
+	</script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js">
+	</script>
 <script src="app.js"></script>
 </body>
 </html>

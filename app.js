@@ -1,4 +1,23 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyDkjuE7xrpOUV6D4hrc9tb-5huFEs2s-WA",
+  authDomain: "small-stock.firebaseapp.com",
+  projectId: "small-stock",
+  storageBucket: "small-stock.appspot.com",
+  messagingSenderId: "648285817045",
+  appId: "1:648285817045:web:5a3648e296ba8961c8ba5c"
+};
+
+//init firebase
+firebase.initializeApp(firebaseConfig);
+
+//init firestore service
+const db = firebase.firestore();
+db.settings({ timestampsInSnapshots: true });
+
+// import  { db }  from '/config.js'
+
 /********************************1202 GAINS*********************************************** */
+
 //UI Elements
 const chkCcorp = document.querySelector('#ccorp');
 const chkSmallBus = document.querySelector('#smallbus');
@@ -10,6 +29,9 @@ const message1202 = document.querySelector('.message1202');
 const error1202msg = "You must meet all of the criteria above to potentially exclude any capital gains"
 
 function myGains(){
+  db.collection("submissions").add({
+    timestamp: new Date() 
+  });
   var gain;
   document.getElementById("buymessage").innerHTML = "";
   document.getElementById("salemessage").innerHTML = "";
@@ -60,6 +82,13 @@ function myGains(){
       }
       setMessage1202(`${gain} of this gain is eligible for exlusion under IRS Code Section 1202`,'black', 'rgb(153,255,153)'); 
       disclaimer1202.textContent = 'For Discussion Purposes Only.  Please consult with your tax advisor.';
+      
+    // db.collection("submissions").add({
+    //   buydate: buyDate,
+    //   saledate: saleDate,
+    //   gain: gain,
+    //   timestamp: new Date() 
+    // });
        
     }
   }
