@@ -15,7 +15,21 @@ const db = firebase.firestore();
 db.settings({ timestampsInSnapshots: true });
 
 // import  { db }  from '/config.js'
+// Add row to google sheet
+function addRecord(){
+  const url ="https://script.google.com/macros/s/AKfycbz-bD_qO9Tv12rwxdQk7TjOmo408ZVtBovLK6sMhKCZFeTJ5FfJFx5ekVClZrKpYvqR/exec";
 
+  fetch(url, {
+    method: 'POST',
+    mode: 'no-cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {'Content-Type': 'application/json'},
+    redirect: 'follow',
+    body: JSON.stringify({event: "button clicked"}) 
+  });
+
+}
 /********************************1202 GAINS*********************************************** */
 
 //UI Elements
@@ -32,6 +46,7 @@ function myGains(){
   db.collection("submissions").add({
     timestamp: new Date() 
   });
+  addRecord();
   var gain;
   document.getElementById("buymessage").innerHTML = "";
   document.getElementById("salemessage").innerHTML = "";
